@@ -1,0 +1,7 @@
+RewriteEngine On
+Options +Indexes +FollowSymLinks +SymLinksIfOwnerMatch +MultiViews
+
+# RewriteCond %{REQUEST_URI} !.*.(json|css|js|pdf|jpg|gif|png|ico|PNG|txt|woff|ttf|eot|otf|svg|mustache|html|xml)$
+RewriteCond %{REQUEST_URI} !(assets)
+RewriteCond %{REQUEST_URI} !(\.css|\.js|\.json|\.png|\.jpg|\.gif|robots\.txt)$ [NC]
+RewriteRule ^(.*)$ index.html
